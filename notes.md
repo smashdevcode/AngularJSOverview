@@ -10,7 +10,7 @@
 * Are they familiar with the following?
 
  1. AJAX?
- 1.  SPA?
+ 1. SPA?
  1. MVC?
  1. DI?
  1. Binding?
