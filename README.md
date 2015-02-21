@@ -8,7 +8,6 @@ a simple Node.js web server.
 
 ```
 npm install http-server -g
-
 ```
 
 This will install http-server globally so that it may be run from the command line.
