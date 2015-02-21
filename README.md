@@ -25,6 +25,11 @@ Then browse to the following URL in your favorite browser:
 http://localhost:8080/
 ```
 
+## Presentation Slides
+
+Deckset (see [http://www.decksetapp.com/](http://www.decksetapp.com/)) was used
+to create the presentation slides from the presentation.md markdown file.
+
 ## Some Fun
 
 ![Ballmer Peak](http://imgs.xkcd.com/comics/ballmer_peak.png)
