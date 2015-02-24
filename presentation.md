@@ -41,7 +41,7 @@
 * (Optional) Brief History of Web Apps
 * Our Evolution
 * Why AngularJS???
-* Example Apps
+* App Demos
 * "Hello World" Walkthrough
 * Q&A
 * Resources
@@ -218,12 +218,7 @@ Combine libraries like "lego" pieces to build applications
 
 ---
 
-## Example Apps
-
-* BBSI Policy App (screenshots)
-* Simplot Regulated (screenshots)
-* APM Galveston (screenshots)
-* Time Tracking Apps (live demo)
+# App Demos
 
 ---
 
