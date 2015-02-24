@@ -1,36 +1,53 @@
 <!doctype html>
-<html>
+<html ng-app="customersApp">
   <head>
     <title>AngularJS Walkthrough</title>
     <link href="styles.css" rel="stylesheet"/>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script>
+      var app = angular.module('customersApp', []);
+
+      app.controller('CustomersController', function ($scope) {
+        $scope.customers = [
+          { name: 'Ken', total: 4.556 },
+          { name: 'Jason', total: 10.3434 },
+          { name: 'James', total: 2.333 }
+        ];
+      });
+    </script>
   </head>
   <body>
 
     <h1>AngularJS Walkthrough</h1>
 
-    <div>
-      <label for="search">Search:</label>
-      <input name="search" type="text"/>
-    </div>
+    <div ng-controller="CustomersController">
 
-    <div>
-      <h2>Customers</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <label for="search">Search:</label>
+        <input name="search" type="text" ng-model="searchText"/>
+      </div>
+
+      {{ searchText }}
+
+      <div>
+        <h2>Customers</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="customer in customers | filter:searchText">
+              <td>{{ customer.name }}</td>
+              <td>{{ customer.total | currency }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
 
   </body>
