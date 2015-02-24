@@ -1,0 +1,26 @@
+
+<h2>Customers</h2>
+
+<div>
+  <label for="search">Search:</label>
+  <input name="search" type="text" ng-model="searchText"/>
+</div>
+
+<div>{{ searchText }}</div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="customer in customers | filter:searchText">
+         <td><a href="#/orders">{{ customer.name }}</a></td>
+         <td>{{ customer.total | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

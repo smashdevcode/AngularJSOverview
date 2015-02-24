@@ -13,6 +13,10 @@
 
  [http://ng-inspector.org/](http://ng-inspector.org/)
 
+1. Use Angular-Seed to jumpstart your projects.
+
+ [https://github.com/angular/angular-seed](https://github.com/angular/angular-seed)
+
 ### Questions
 
 * What is the skill level of the students?

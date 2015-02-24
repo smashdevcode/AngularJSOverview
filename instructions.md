@@ -3,7 +3,7 @@
 
 ## Directives, Data Binding, and Filtering
 
-1. Add "ng-app" directive to the <html> element.
+1. Add "ng-app" directive to the &lt;html&gt; element.
 
  ```
  <html ng-app>
@@ -21,13 +21,13 @@
  {{ searchText }}
  ```
 
-1. Add "ng-init" directive to the <body> element.
+1. Add "ng-init" directive to the &lt;body&gt; element.
 
  ```
  <body ng-init="customers=['James','Ken','Jason','Dave','Brian']">
  ```
 
-1. Add "ng-repeat" directive to the <tr> element and a data binding expression to the first <td> element.
+1. Add "ng-repeat" directive to the &lt;tr&gt; element and a data binding expression to the first &lt;td&gt; element.
 
  ```
  <tr ng-repeat="customer in customers">
@@ -78,7 +78,7 @@
  <html ng-app="customersApp">
  ```
 
-1. Add a new <div> element with a "ng-controller" directive around our main content.
+1. Add a new &lt;div&gt; element with a "ng-controller" directive around our main content.
 
  ```
  <div ng-controller="CustomersController">
@@ -95,4 +95,79 @@
 
 ## Routing
 
-1. TODO
+1. Define routes using the "$routeProvider" provider.
+
+ ```
+ app.config(function ($routeProvider) {
+   $routeProvider.when('/orders',
+   {
+     controller: 'OrdersController',
+     templateUrl: '/views/orders.html'
+   })
+   .when('/',
+   {
+     controller: 'CustomersController',
+     templateUrl: '/views/customers.html'
+   })
+ });
+ ```
+
+1. Add an "OrdersController" controller.
+
+ ```
+ app.controller('OrdersController', function ($scope) {
+
+ });
+ ```
+
+1. Add "ngRoute" as a dependency to the main module.
+
+ ```
+ var app = angular.module('customersApp', ['ngRoute']);
+ ```
+
+1. Replace the main content with a &lt;div&gt; element containing the "ng-view" directive.
+
+ ```
+ <div ng-view></div>
+ ```
+
+1. Add a "views" folder.
+
+1. Add a "customers.html" view.
+
+ ```
+ <h2>Customers</h2>
+
+ <div>
+   <label for="search">Search:</label>
+   <input name="search" type="text" ng-model="searchText"/>
+ </div>
+
+ <div>{{ searchText }}</div>
+
+ <div>
+   <table>
+     <thead>
+       <tr>
+         <th>Name</th>
+         <th>Total</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr ng-repeat="customer in customers | filter:searchText">
+          <td><a href="#/orders">{{ customer.name }}</a></td>
+          <td>{{ customer.total | currency }}</td>
+       </tr>
+     </tbody>
+   </table>
+ </div>
+ ```
+
+1. Add an "orders.html" view.
+
+ ```
+ <h2>Customer Orders</h2>
+
+ <p><a href="#/">Back to Customers</a></p>
+ ```
