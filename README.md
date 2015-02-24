@@ -21,7 +21,7 @@ http-server
 Then browse to the following URL in your favorite browser:
 
 ```
-http://localhost:8080/
+http://localhost:8080/{app folder name}
 ```
 
 ## Presentation Slides
